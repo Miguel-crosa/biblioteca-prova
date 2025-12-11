@@ -63,6 +63,8 @@
                 cadastro_usuarios us ON emp.cadastro_emprestimo_id_usuario = us.cadastro_usuario_id
             INNER JOIN
                 cadastro_obra obra ON emp.cadastro_emprestimo_id_obra = obra.cadastro_obra_id
+            ORDER BY 
+				emp.cadastro_emprestimo_data_saida;
             ";
 
             $resultado = mysqli_query($conn, $sql) or die("Erro ao retornar dados");
