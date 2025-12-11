@@ -1,0 +1,14 @@
+* {
+    cursor: url('../_imagens/cursor-base.png'), default;
+}
+
+button {
+    cursor: url('../_imagens/cursor-pointer.png'), pointer;
+}
+
+input,
+h3,
+p,
+b {
+    cursor: url('../_imagens/cursor-text.png'), text;
+}

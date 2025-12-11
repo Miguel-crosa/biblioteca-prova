@@ -1,0 +1,340 @@
+:root {
+    --bg: #F7F7F2;
+    --text: #333333;
+    --primary: #005F73;
+    --secondary: #4A6854;
+    --muted: #EBEBEB;
+    --max-width: 960px;
+    --border-radius: 10px;
+    --transition: all 0.12s ease;
+}
+
+* {
+    box-sizing: border-box;
+    cursor: url('../_imagens/cursor-base.png'), default;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.site-header {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.03), transparent);
+    border-bottom: 1px solid var(--muted);
+    padding: 12px 16px;
+    position: relative;
+    top: 0;
+    z-index: 100;
+}
+
+.site-header .wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.brand {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.15rem;
+}
+
+.brand small {
+    font-weight: 400;
+    color: var(--secondary);
+    margin-left: 8px;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 28px auto;
+    padding: 18px;
+    min-height: calc(100vh - 140px);
+}
+
+h1,
+h2,
+h3 {
+    margin: 0 0 18px 0;
+    color: var(--text);
+    cursor: url('../_imagens/cursor-text.png'), text;
+}
+
+.lead {
+    margin: 0 0 18px 0;
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.card {
+    background: #005F73;
+    border-radius: var(--border-radius);
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--muted);
+    margin-bottom: 18px;
+}
+
+.card-header {
+    border-bottom: 1px solid var(--muted);
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.card-header h2 {
+    margin: 0;
+    color: var(--primary);
+}
+
+.form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    color: var(--bg);
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    cursor: url('../_imagens/cursor-text.png'), text;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+input[type="password"],
+textarea,
+select {
+    padding: 10px 12px;
+    border: 1px solid var(--muted);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: #fff;
+    color: var(--text);
+    transition: var(--transition);
+    cursor: url('../_imagens/cursor-pointer.png'), pointer;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+    border-color: var(--primary);
+    scale: 1.02;
+    cursor: url('../_imagens/cursor-text.png'), text;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 32px;
+}
+
+/* Button Grid */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    align-items: stretch;
+    margin-top: 18px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: linear-gradient(180deg, #007b86, var(--primary));
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: url('../_imagens/cursor-pointer.png'), pointer;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:focus {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+}
+
+.btn.ghost {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn.ghost:hover {
+    background: var(--muted);
+    cursor: url('../_imagens/cursor-voltar.png'), pointer;
+}
+
+.btn.secondary {
+    background: linear-gradient(180deg, #5d8a6f, var(--secondary));
+}
+
+.btn-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 18px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    margin-top: 12px;
+}
+
+th,
+td {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--muted);
+    text-align: left;
+}
+
+th {
+    background: transparent;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+tr:hover {
+    background: rgba(0, 95, 115, 0.02);
+}
+
+.status-ok {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.status-warn {
+    color: #b36b00;
+    font-weight: 600;
+}
+
+.status-expired {
+    color: #b00020;
+    font-weight: 600;
+}
+
+.meta {
+    margin: 8px 0;
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+footer.site-footer {
+    border-top: 1px solid var(--muted);
+    background: #fff;
+    padding: 12px 16px;
+    margin-top: 28px;
+}
+
+.site-footer .wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+}
+
+.message {
+    padding: 12px 16px;
+    border-radius: var(--border-radius);
+    margin-bottom: 18px;
+    border-left: 4px solid;
+}
+
+.message.success {
+    background: rgba(74, 104, 84, 0.1);
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
+.message.error {
+    background: rgba(176, 0, 32, 0.1);
+    border-color: #b00020;
+    color: #b00020;
+}
+
+.message.info {
+    background: rgba(0, 95, 115, 0.1);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.sr-only {
+    position: absolute;
+    left: -9999px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-18 {
+    margin-top: 18px;
+}
+
+.mb-18 {
+    margin-bottom: 18px;
+}
+
+.footer {
+    position: relative;
+}
+
+.footer button {
+    position: absolute;
+    left: 92%;
+    top: -50px;
+}
